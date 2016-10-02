@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "manager",
+    "exec_interpreter": "node",
+    "exec_mode": "cluster",
+    "instances": 1,
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "max_memory_restart": "100M",
+    "merge_logs": true,
+    "script": [
+      process.env.MANAGER_HOME?process.env.MANAGER_HOME:".",
+      "/app.js"
+    ].join("")
+  }]
+}
